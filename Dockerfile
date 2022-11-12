@@ -1,14 +1,15 @@
 FROM elixir:1.13.4
 
 # Build Args
-ARG PHOENIX_VERSION=1.6.11
-ARG NODEJS_VERSION=16.x
+ARG PHOENIX_VERSION=1.6.15
+ARG NODEJS_VERSION=18.x
 
 # Apt
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y apt-utils
 RUN apt-get install -y build-essential
 RUN apt-get install -y inotify-tools
+RUN apt-get install -y vim
 
 # Nodejs
 RUN curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} | bash
